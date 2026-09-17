@@ -28,17 +28,17 @@ Ce repository combine **cours théoriques** et **labs pratiques** pour passer ra
 >
 > **L'auteur décline toute responsabilité concernant l'utilisation abusive des informations présentes dans ce repository.**
 
-## 🎯 Learn → Attack → Analyze → Defend
+## 🎯 Learn → Attack → Defend → Analyze
 
 Chaque module suit une approche offensive puis défensive :
 
 📚 **Learn** — comprendre les concepts, architectures et vecteurs d’attaque
 
-🧪 **Attack** — reproduire les techniques dans des labs contrôlés
-
-🔬 **Analyze** — comprendre pourquoi et comment l’attaque fonctionne
+🧪 **Attack** — expliquer les techniques offensives
 
 🛡️ **Defend** — identifier les mitigations et renforcer le système
+
+🔬 **Analyze** — reproduire et évaluer les attaques dans des labs contrôlés
 
 Chaque module associe les **fondamentaux** nécessaires à sa compréhension avec des **labs hands-on** permettant d’expérimenter directement sur des scénarios réalistes.
 
@@ -92,9 +92,11 @@ Ils peuvent volontairement contenir :
 
     des architectures simplifiées.
 
-Ils ne sont pas conçus pour être déployés tels quels en production.
+**Ils ne sont pas conçus pour être déployés tels quels en production.**
 
 ## 🔭 Veille & Recherche
+
+**Read. Understand. Reproduce.**
 
 L’**AI Security** évolue rapidement. Le repository intégrera également une veille régulière autour des nouvelles techniques d’attaque, vulnérabilités et méthodes de défense.
 
@@ -110,16 +112,23 @@ Nous nous appuierons notamment sur :
 
 L’objectif est de lire, comprendre et reproduire les recherches les plus pertinentes afin de transformer les avancées du domaine en connaissances et labs pratiques.
 
-    Read. Understand. Reproduce.
-
-
 ## Roadmap
+
+### Schéma d'attaque
 
 | Module                    | Learn | Attack | Analyze | Defend |  Lab  | Difficulté |
 | ------------------------- | :---: | :----: | :-----: | :----: | :---: | :--------: |
-| Direct Prompt Injection   |   ✓   |        |         |        |       |     🟢      |
-| Indirect Prompt injection |       |        |         |        |       |     🟢      |
-| Adversarial Attack        |       |        |         |        |       |     🟡🔴     |
+| Direct Prompt Injection   |   ✔️   |   ✔️    |    ✔️    |   ✔️    |       |     🟢      |
+| Indirect Prompt injection |   🚧   |        |         |        |       |     🟢      |
+| Function calling attack   |   🚧   |        |         |        |       |     🟢      |
+| Adversarial Attack        |   🚧   |        |         |        |       |     🟡🔴     |
+
+### Développement d'outils
+
+| Module                                                       |  Lab  | Difficulté |
+| ------------------------------------------------------------ | :---: | :--------: |
+| Faire un module garak                                        |   🚧   |     🟢      |
+| Construire un agent Red Team avec langGraph - Baseline garak |   🚧   |     🟢      |
 
 > 🟢 Débutant
 > 🟡 Intermédiaire
@@ -127,7 +136,7 @@ L’objectif est de lire, comprendre et reproduire les recherches les plus perti
 
 ## 🧰 Prérequis
 
-Ce parcours est orienté hands-on.
+Ce parcours est orienté **hands-on**.
 
 Vous devriez avoir des bases en :
 
@@ -135,3 +144,19 @@ Vous devriez avoir des bases en :
     🧠 Deep Learning / Machine Learning  
     🐧 administration Linux  
     📐 mathématiques appliquées à l'IA  
+
+## 🤝 Contribution
+
+Ce dépôt regroupe différents cours et tutoriels destinés à l’apprentissage. Les contributions sont les bienvenues afin d’améliorer et d’enrichir le contenu.
+
+Vous pouvez notamment :
+
+    🐛 Signaler une erreur dans un cours ou un tutoriel.
+    ✏️ Corriger ou améliorer une explication.
+    💡 Proposer des exemples ou des exercices supplémentaires.
+    📚 Ajouter un nouveau cours ou tutoriel.
+    🔗 Signaler un lien qui ne fonctionne plus ou une ressource obsolète.
+
+Pour contribuer, vous pouvez ouvrir une **Issue** pour signaler un problème ou proposer une idée, ou soumettre directement une **Pull Request** avec vos modifications.
+
+**Toutes les contributions permettant de rendre les cours plus clairs, accessibles et utiles sont les bienvenues !**
