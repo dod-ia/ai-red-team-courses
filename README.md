@@ -114,14 +114,26 @@ L’objectif est de lire, comprendre et reproduire les recherches les plus perti
 
 ## Roadmap
 
+### Fondations offensives
+
+| Module                                  | Learn | Attack | Analyze | Defend |  Lab  | Difficulté |
+| --------------------------------------- | :---: | :----: | :-----: | :----: | :---: | :--------: |
+| Injection SQL - Fondations              |   🚧   |        |         |        |       |     🟢      |
+| Cross-Site Scripting (XSS) - Fondations |   🚧   |        |         |        |       |     🟢      |
+
 ### Schéma d'attaque
 
 | Module                    | Learn | Attack | Analyze | Defend |  Lab  | Difficulté |
 | ------------------------- | :---: | :----: | :-----: | :----: | :---: | :--------: |
-| Direct Prompt Injection   |   ✔️   |   ✔️    |    ✔️    |   ✔️    |       |     🟢      |
+| Direct Prompt Injection   |   ✔️   |   ✔️    |         |        |       |     🟢      |
 | Indirect Prompt injection |   🚧   |        |         |        |       |     🟢      |
-| Function calling attack   |   🚧   |        |         |        |       |     🟢      |
+| Insecure Output Handling  |   🚧   |        |         |        |       |     🟢      |
 | Adversarial Attack        |   🚧   |        |         |        |       |     🟡🔴     |
+| Model reversing           |   🚧   |        |         |        |       |     🟢      |
+| Deny of ML access         |   🚧   |        |         |        |       |     🟢      |
+
+> [!NOTE]
+> La section *Lab* correspond à la création d'un environnement de *test* pour les expérimentations. Il se peut qu'il n'y ait pas de *Lab* selon les sections.
 
 ### Développement d'outils
 
