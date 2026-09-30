@@ -715,13 +715,14 @@ MCP ne garantit pas automatiquement :
 ✗ qu'un LLM interprète correctement une instruction
 ```
 
-MCP définit un protocole permettant à une application de découvrir et d'utiliser des capacités externes. Il ne définit pas le raisonnement du modèle, la politique d'autorisation de l'application ou la sécurité des outils.
+> [!IMPORTANT]
+> MCP définit un protocole permettant à une application de découvrir et d'utiliser des capacités externes. Il ne définit pas le raisonnement du modèle, la politique d'autorisation de l'application ou la sécurité des outils.
 ## Pour aller plus loin : évolution de l'architecture MCP
 
 > **Deux versions, deux philosophies**
 
 > [!WARNING]
-> Les sections précédentes suffisent pour comprendre le fonctionnement fondamental de MCP. **Cette section est avancée et demande d'avoir des bases en systèmes distribués et résea**u**.
+> Les sections précédentes suffisent pour comprendre le fonctionnement fondamental de MCP. **Cette section est avancée et demande d'avoir des bases en systèmes distribués et réseau**.
 
 *MCP* est un protocole jeune et soumis à des évolutions importantes depuis sa création. **Deux générations architecturales du protocole coexistent actuellement** : la génération *legacy* jusqu'à 2025-11-25 et la génération *modern* introduite avec 2026-07-28..
 
