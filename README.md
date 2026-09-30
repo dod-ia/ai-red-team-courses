@@ -28,21 +28,37 @@ Ce repository combine **cours théoriques** et **labs pratiques** pour passer ra
 >
 > **L'auteur décline toute responsabilité concernant l'utilisation abusive des informations présentes dans ce repository.**
 
-## 🎯 Learn → Attack → Defend → Analyze
+## 🎯 Structure du parcours
 
-Chaque module suit une approche offensive puis défensive :
+Le parcours est divisé en **5 sections**:
 
-📚 **Learn** — comprendre les concepts, architectures et vecteurs d’attaque
+| Domaine | Description |
+|---|---|
+| 🔒 **Fondations offensives** | Bases et fondamentaux de la sécurité offensive d'un système d'information. |
+| 🎯 **Schéma d'attaque** | Modéliser les surfaces d'attaque, les vecteurs d'exploitation et les impacts propres aux systèmes d'IA. |
+| 🔒 **Schéma de défense** | Comprendre les principes, techniques et mécanismes permettant de sécuriser les systèmes d'IA. |
+| 🧠 **Fondations d'architecture IA / Théorie de l'apprentissage** | Comprendre l'architecture, l'entraînement et l'inférence des systèmes d'IA afin de mieux appréhender leurs vulnérabilités. |
+| 🛠️ **Écosystème IA et développement d'outils** | Maîtriser les frameworks et outils nécessaires pour développer, tester, observer et sécuriser des applications d'IA. |
+### Approche « Learn → Attack → Analyze → Defend »
 
-🧪 **Attack** — expliquer les techniques offensives
+L'explication d'une attaque suit un **pattern en 4 étapes**:
 
-🛡️ **Defend** — identifier les mitigations et renforcer le système
-
-🔬 **Analyze** — reproduire et évaluer les attaques dans des labs contrôlés
+| Étape | Description |
+|---|---|
+| 📚 **Learn** | Comprendre les concepts, architectures et vecteurs d'attaque. |
+| 🧪 **Attack** | Expliquer les techniques offensives. |
+| 🔬 **Analyze** | Reproduire et évaluer les attaques dans des labs contrôlés. |
+| 🛡️ **Defend** | Identifier les mitigations et renforcer le système. |
 
 Chaque module associe les **fondamentaux** nécessaires à sa compréhension avec des **labs hands-on** permettant d’expérimenter directement sur des scénarios réalistes.
 
 > **Pas de raccourcis. Pas de boîtes noires. Juste de la théorie, des attaques et des labs pratiques.**
+
+> [!NOTE]
+> Pour les autres sections que **Schéma d'attaque** et **Fondations offensives**, le pattern est uniquement **Learn → Analyze**.
+>
+> Il se peut qu'un **module fasse référence à un autre** dans le cadre de prérequis ou de détails supplémentaires associés à une notion particulière.
+
 
 ## 🧪 Hands-on Labs
 
@@ -114,33 +130,54 @@ L’objectif est de lire, comprendre et reproduire les recherches les plus perti
 
 ## Roadmap
 
-### Fondations offensives
-
-| Module                                  | Learn | Attack | Analyze | Defend |  Lab  | Difficulté |
-| --------------------------------------- | :---: | :----: | :-----: | :----: | :---: | :--------: |
-| Injection SQL - Fondations              |   🚧   |        |         |        |       |     🟢      |
-| Cross-Site Scripting (XSS) - Fondations |   🚧   |        |         |        |       |     🟢      |
-
-### Schéma d'attaque
-
-| Module                    | Learn | Attack | Analyze | Defend |  Lab  | Difficulté |
-| ------------------------- | :---: | :----: | :-----: | :----: | :---: | :--------: |
-| Direct Prompt Injection   |   ✔️   |   ✔️    |         |        |       |     🟢      |
-| Indirect Prompt injection |   🚧   |        |         |        |       |     🟢      |
-| Insecure Output Handling  |   🚧   |        |         |        |       |     🟢      |
-| Adversarial Attack        |   🚧   |        |         |        |       |     🟡🔴     |
-| Model reversing           |   🚧   |        |         |        |       |     🟢      |
-| Deny of ML access         |   🚧   |        |         |        |       |     🟢      |
-
 > [!NOTE]
 > La section *Lab* correspond à la création d'un environnement de *test* pour les expérimentations. Il se peut qu'il n'y ait pas de *Lab* selon les sections.
 
-### Développement d'outils
+### Fondations offensives
 
-| Module                                                       |  Lab  | Difficulté |
-| ------------------------------------------------------------ | :---: | :--------: |
-| Faire un module garak                                        |   🚧   |     🟢      |
-| Construire un agent Red Team avec langGraph - Baseline garak |   🚧   |     🟢      |
+| Module                                  | Learn | Attack | Defend | Analyze |  Lab  | Difficulté |
+| --------------------------------------- | :---: | :----: | :----: | :-----: | :---: | :--------: |
+| Injection SQL - Fondations              |   🚧   |        |        |         |       |     🟢      |
+| Cross-Site Scripting (XSS) - Fondations |   🚧   |        |        |         |       |     🟢      |
+
+### Fondations d'architecture IA / Théorie de l'apprentissage
+
+| Module                                       | Learn | Analyze |  Lab  | Difficulté |
+| -------------------------------------------- | :---: | :-----: | :---: | :--------: |
+| Apprentissage - Rétropropagation du gradient |   🚧   |         |       |     🟡      |
+
+
+### Schéma d'attaque
+
+| Module                     |                            Learn                            |                            Attack                             | Defend | Analyze |  Lab  | Difficulté |
+| -------------------------- | :---------------------------------------------------------: | :-----------------------------------------------------------: | :----: | :-----: | :---: | :--------: |
+| Direct Prompt Injection    | [✔️](/schema_attaque/direct_prompt_injection/learn/learn.md) | [✔️](/schema_attaque/direct_prompt_injection/attack/attack.md) |        |         |       |     🟢      |
+| Indirect Prompt injection  |                              🚧                              |                                                               |        |         |       |     🟢      |
+| Insecure Output Handling   |                              🚧                              |                                                               |        |         |       |     🟢      |
+| Adversarial Attack - Image |                              🚧                              |                                                               |        |         |       |     🔴      |
+| Adversarial Attack - Text  |                              🚧                              |                                                               |        |         |       |     🔴      |
+| MCP attack                 |                              🚧                              |                                                               |        |         |       |     🟡      |
+| Model reversing            |                              🚧                              |                                                               |        |         |       |     🟢      |
+| Deny of ML access          |                              🚧                              |                                                               |        |         |       |     🟢      |
+
+### Schéma de défense
+
+| Module                    | Learn | Analyze |  Lab  | Difficulté |
+| ------------------------- | :---: | :-----: | :---: | :--------: |
+| Guardrails                |   🚧   |         |       |     🟢      |
+| Chiffrement homomorphique |   🚧   |         |       |     🔴      |
+| Differential privacy      |   🚧   |         |       |     🟡🔴     |
+| Watermark sur LLM         |   🚧   |         |       |     🟡🔴     |
+
+### Ecosystème IA et développement d'outils
+
+| Module                                                    |                           Learn                           | Analyze |  Lab  | Difficulté |
+| --------------------------------------------------------- | :-------------------------------------------------------: | :-----: | :---: | :--------: |
+| Model Context Protocol (MCP) - Fondations                 | [✔️](/developpements_outils/mcp_fondations/learn/learn.md) |         |   ⌀   |     🟢🟡     |
+| Garak (Nvidia) - Faire son premier module                 |                             🚧                             |         |       |     🟢      |
+| LangChain - Faire son premier RAG                         |                             🚧                             |         |       |     🟢      |
+| LangFuse - Observabilité d'un system IA (LangChain/Graph) |                             🚧                             |         |       |     🟢      |
+| LangGraph - Faire son premier agent Red Team              |                             🚧                             |         |       |     🟡      |
 
 > 🟢 Débutant
 > 🟡 Intermédiaire
