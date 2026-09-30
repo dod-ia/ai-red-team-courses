@@ -724,7 +724,7 @@ MCP ne garantit pas automatiquement :
 > [!WARNING]
 > Les sections précédentes suffisent pour comprendre le fonctionnement fondamental de MCP. **Cette section est avancée et demande d'avoir des bases en systèmes distribués et réseau**.
 
-*MCP* est un protocole jeune et soumis à des évolutions importantes depuis sa création. **Deux générations architecturales du protocole coexistent actuellement** : la génération *legacy* jusqu'à 2025-11-25 et la génération *modern* introduite avec 2026-07-28..
+*MCP* est un protocole jeune et soumis à des évolutions importantes depuis sa création. **Deux générations architecturales du protocole coexistent actuellement** : la génération *legacy* jusqu'à 2025-11-25 et la génération *modern* introduite avec 2026-07-28.
 
 La différence majeure entre les deux versions concerne la **gestion de l'état** entre les échanges Client -> Serveur dans la configuration Streamable HTTP.
 
@@ -740,7 +740,7 @@ Ce changement permet au serveur MCP **MCP 2026-07-28** d'avoir une meilleure sca
 
 #### Architecture de MCP 2025-11-25
 
-```json
+```
 MCP 2025-11-25
 ────────────────────────────────────────
 
@@ -902,7 +902,7 @@ Néanmoins, cette méthode peut être problématique:
 
 À partir de la version **2026-07-28**, *MCP* adopte un modèle **sans handshake de session** : le serveur est découvert via *server/discover* et les informations de version sont portées par chaque requête.
 
-```json
+```
 MCP 2026-07-28
 ────────────────────────────────────────
 
