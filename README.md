@@ -32,23 +32,23 @@ Ce repository combine **cours théoriques** et **labs pratiques** pour passer ra
 
 Le parcours est divisé en **5 sections**:
 
-| Domaine | Description |
-|---|---|
-| 🔒 **Fondations offensives** | Bases et fondamentaux de la sécurité offensive d'un système d'information. |
-| 🎯 **Schéma d'attaque** | Modéliser les surfaces d'attaque, les vecteurs d'exploitation et les impacts propres aux systèmes d'IA. |
-| 🔒 **Schéma de défense** | Comprendre les principes, techniques et mécanismes permettant de sécuriser les systèmes d'IA. |
+| Domaine                                                         | Description                                                                                                                |
+| --------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| 🔒 **Fondations offensives**                                     | Bases et fondamentaux de la sécurité offensive d'un système d'information.                                                 |
+| 🎯 **Schéma d'attaque**                                          | Modéliser les surfaces d'attaque, les vecteurs d'exploitation et les impacts propres aux systèmes d'IA.                    |
+| 🔒 **Schéma de défense**                                         | Comprendre les principes, techniques et mécanismes permettant de sécuriser les systèmes d'IA.                              |
 | 🧠 **Fondations d'architecture IA / Théorie de l'apprentissage** | Comprendre l'architecture, l'entraînement et l'inférence des systèmes d'IA afin de mieux appréhender leurs vulnérabilités. |
-| 🛠️ **Écosystème IA et développement d'outils** | Maîtriser les frameworks et outils nécessaires pour développer, tester, observer et sécuriser des applications d'IA. |
+| 🛠️ **Écosystème IA et développement d'outils**                   | Maîtriser les frameworks et outils nécessaires pour développer, tester, observer et sécuriser des applications d'IA.       |
 ### Approche « Learn → Attack → Analyze → Defend »
 
 L'explication d'une attaque suit un **pattern en 4 étapes**:
 
-| Étape | Description |
-|---|---|
-| 📚 **Learn** | Comprendre les concepts, architectures et vecteurs d'attaque. |
-| 🧪 **Attack** | Expliquer les techniques offensives. |
-| 🔬 **Analyze** | Reproduire et évaluer les attaques dans des labs contrôlés. |
-| 🛡️ **Defend** | Identifier les mitigations et renforcer le système. |
+| Étape         | Description                                                   |
+| ------------- | ------------------------------------------------------------- |
+| 📚 **Learn**   | Comprendre les concepts, architectures et vecteurs d'attaque. |
+| 🧪 **Attack**  | Expliquer les techniques offensives.                          |
+| 🔬 **Analyze** | Reproduire et évaluer les attaques dans des labs contrôlés.   |
+| 🛡️ **Defend**  | Identifier les mitigations et renforcer le système.           |
 
 Chaque module associe les **fondamentaux** nécessaires à sa compréhension avec des **labs hands-on** permettant d’expérimenter directement sur des scénarios réalistes.
 
@@ -139,6 +139,7 @@ L’objectif est de lire, comprendre et reproduire les recherches les plus perti
 | --------------------------------------- | :---: | :----: | :----: | :-----: | :---: | :--------: |
 | Injection SQL - Fondations              |   🚧   |        |        |         |       |     🟢      |
 | Cross-Site Scripting (XSS) - Fondations |   🚧   |        |        |         |       |     🟢      |
+| Pentest - Phase de Reconnaissance       |   🚧   |        |        |         |       |     🟢      |
 
 ### Fondations d'architecture IA / Théorie de l'apprentissage
 
@@ -171,13 +172,23 @@ L’objectif est de lire, comprendre et reproduire les recherches les plus perti
 
 ### Ecosystème IA et développement d'outils
 
-| Module                                                    |                           Learn                           | Analyze |  Lab  | Difficulté |
-| --------------------------------------------------------- | :-------------------------------------------------------: | :-----: | :---: | :--------: |
-| Model Context Protocol (MCP) - Fondations                 | [✔️](/developpements_outils/mcp_fondations/learn/learn.md) |         |   ⌀   |     🟢🟡     |
-| Garak (Nvidia) - Faire son premier module                 |                             🚧                             |         |       |     🟢      |
-| LangChain - Faire son premier RAG                         |                             🚧                             |         |       |     🟢      |
-| LangFuse - Observabilité d'un system IA (LangChain/Graph) |                             🚧                             |         |       |     🟢      |
-| LangGraph - Faire son premier agent Red Team              |                             🚧                             |         |       |     🟡      |
+| Module                                                    |                           Learn                           |                            Analyze                            |  Lab  | Difficulté |
+| --------------------------------------------------------- | :-------------------------------------------------------: | :-----------------------------------------------------------: | :---: | :--------: |
+| Model Context Protocol (MCP) - Fondations                 | [✔️](/developpements_outils/mcp_fondations/learn/learn.md) | [✔️](/developpements_outils/mcp_fondations/analyse/analyse.md) |   ⌀   |     🟡      |
+| Déployer un serveur MCP en production                     |                             🚧                             |                                                               |       |     🔴      |
+| Faire un outil MCP DAST                     |                             🚧                             |                                                               |       |     🔴      |
+| LangChain - Faire son premier RAG                         |                             🚧                             |                                                               |       |     🟢      |
+| LangFuse - Observabilité d'un system IA (LangChain/Graph) |                             🚧                             |                                                               |       |     🟢      |
+| LangGraph - Faire son premier agent Red Team              |                             🚧                             |                                                               |       |     🟡      |
+| Construire son premier système multi-agent                |                             🚧                             |                                                               |       |     🟡      |
+
+### Management du risque AI, audit et gouvernance
+
+| Module                    | Learn | Analyze | Difficulté |
+| ------------------------- | :---: | :-----: | :--------: |
+| Faire un modèle de menace |   🚧   |         |     🟢      |
+| NIST AI Framework         |   🚧   |         |     🟡      |
+| ISO 42000                 |   🚧   |         |     🟡      |
 
 > 🟢 Débutant
 > 🟡 Intermédiaire
