@@ -1,6 +1,6 @@
 # Direct Prompt Injection - ATTACK
 
-## Modèle de menace
+## Fiche de scénario Red Team
 
 Le scénario considère un attaquant capable de soumettre des entrées arbitraires à un LLM. L’objectif est d’exploiter une approche par *Direct Prompt Injection* afin d’obtenir la divulgation d’un secret présent dans le *system prompt*.
 
