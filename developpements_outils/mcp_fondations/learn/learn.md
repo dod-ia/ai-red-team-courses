@@ -1,6 +1,6 @@
 # Model Context Protocol (MCP) - Fondations
 
-> infographie récapitulative: [ici](/developpements_outils/mcp_fondations/learn/learn_infographie_mcp_protocole.png)
+> infographie récapitulative: [ici](/developpements_outils/mcp_fondations/learn/infographie_mcp_protocole.png)
 > 
 ## Qu'est-ce que MCP ?
 
