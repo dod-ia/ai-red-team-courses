@@ -1,6 +1,6 @@
 # Model Context Protocol (MCP) - Fondations
 
-> Cartographie récapitulative: [ici](/developpements_outils/mcp_fondations/learn/learn_cartographie_mcp_protocole.png)
+> infographie récapitulative: [ici](/developpements_outils/mcp_fondations/learn/learn_infographie_mcp_protocole.png)
 > 
 ## Qu'est-ce que MCP ?
 
@@ -1241,7 +1241,7 @@ event: message
 }
 ```
 
-```json
+```text
 Client                         Serveur MCP
    │                                │
    │                                │
