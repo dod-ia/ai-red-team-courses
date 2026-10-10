@@ -1,6 +1,6 @@
-# Model Context Protocol (MCP) - Fondations
+# FO-MCP-PCF-001: MCP - Protocole et concepts fondamentaux: Fondations
 
-> infographie récapitulative: [ici](/developpements_outils/mcp_fondations/learn/infographie_mcp_protocole.png)
+> infographie récapitulative: [ici](./images/infographie_mcp_protocole.png)
 > 
 ## Qu'est-ce que MCP ?
 

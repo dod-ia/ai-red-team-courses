@@ -1,4 +1,4 @@
-# Direct Prompt Injection - ATTACK
+# AT-LLM-PI-001: Prompt Injection: Direct Prompt Injection
 
 ## Fiche de scénario Red Team
 

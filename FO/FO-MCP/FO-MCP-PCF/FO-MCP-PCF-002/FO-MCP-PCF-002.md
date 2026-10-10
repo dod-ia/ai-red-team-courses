@@ -1,4 +1,4 @@
-# Model Context Protocol (MCP) - Code et analyse
+# FO-MCP-PCF-002: MCP - Protocole et concepts fondamentaux: Implémentation
 
 > [!WARNING]
 > Le code présenté dans cette section possède **VOLONTAIREMENT** des failles de sécurité et servira de base pour le module `MCP attack`. Il n'a pas vocation à être utilisé pour développer des outils de production.
@@ -99,7 +99,7 @@ Dans un code Python, *Pydantic* (https://pydantic.dev/) permet de définir, stru
 
 L'infographie ci-dessous illustre comment les déclarations *Pydantic* sont exploitées.
 
-![infographie définissant l'utilisation de Pydantic dans la définition d'un tool MCP](/developpements_outils/mcp_fondations/analyse/images/infographie_mcp_pydantic.png)
+![infographie définissant l'utilisation de Pydantic dans la définition d'un tool MCP](./images/infographie_mcp_pydantic.png)
 
 > [!NOTE]
 > La logique est similaire pour les Resources/Prompts mais les paramètres/attributs ne sont pas les mêmes.
@@ -118,7 +118,7 @@ Un *middleware* est une couche qui **s'intercale entre la réception d'une requ�
 
 Ils sont particulièrement utiles pour **centraliser les besoins récurrents** comme l'authentification et les contrôles de sécurité, plutôt que de répéter cette logique dans chaque Tool.
 
-![infographie définissant le role d'un middleware dans une architecture distribuée](/developpements_outils/mcp_fondations/analyse/images/infographie_mcp_middleware.png)
+![infographie définissant le role d'un middleware dans une architecture distribuée](./images/infographie_mcp_middleware.png)
 
 Dans cet exemple, nous faisons 2 middleware:
 
@@ -443,7 +443,7 @@ Il est donc nécessaire d'initialiser l'ensemble des noeuds avec la même clé d
 
 L’audience désigne le **destinataire prévu d’un jeton ou d’une requête** : elle permet de vérifier que le jeton est utilisé par le bon service. Il peut être défini manuellement par l'attribut `audience` dans l'objet `RequestStateSecurity` (en plus de la clé). Si pas défini, le nom du serveur MCP (défini par `name` de l'objet `MCPServer`) est utilisé.
 
-![infographie définissant le rôle de la clé pour traiter RequestState en configuration multi-instances](/developpements_outils/mcp_fondations/analyse/images/infographie_mcp_multiserver_sync.png)
+![infographie définissant le rôle de la clé pour traiter RequestState en configuration multi-instances](./images/infographie_mcp_multiserver_sync.png)
 
 > [!IMPORTANT]
 > *requestState* n'est pas un état métier partagé entre les serveurs. C'est un mécanisme de reprise sécurisé associé à une requête.
