@@ -40,13 +40,13 @@ Ce repository propose une **approche progressive** et concrète, avec des explic
 Le parcours est divisé en **6 sections**:
 
 | Domaine            | Description                                                                                                          |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------- |
-| 📚 **Fondations**   | Acquérir les fondamentaux pour comprendre les concepts                                                               |
-| ⚔️ **Attaque**      | Modéliser les surfaces d'attaque, les vecteurs d'exploitation et les impacts                                         |
-| 🔒 **Défense**      | Comprendre les principes, techniques et mécanismes permettant de sécuriser les systèmes                              |
-| 🏗️ **Architecture** | Comprendre la conception, le déploiement et la mise en production                                                    |
-| 🛠️ **Outil**        | Maîtriser les frameworks et outils nécessaires pour développer, tester, observer et sécuriser des applications d'IA. |
-| 🏛️ **Gouvernance**  | Comprendre les enjeux de conformité, de gestion des risques et de responsabilité liés aux systèmes                   |
+| :------------------: | -------------------------------------------------------------------------------------------------------------------- |
+| 📚 **Fondations** (FO)  | Acquérir les fondamentaux pour comprendre les concepts                                                               |
+| ⚔️ **Attaque** (AT)     | Modéliser les surfaces d'attaque, les vecteurs d'exploitation et les impacts                                         |
+| 🔒 **Défense** (DE)     | Comprendre les principes, techniques et mécanismes permettant de sécuriser les systèmes                              |
+| 🏗️ **Architecture** (AR) | Comprendre la conception, le déploiement et la mise en production                                                    |
+| 🛠️ **Outil** (OU)       | Maîtriser les frameworks et outils nécessaires pour développer, tester, observer et sécuriser des applications d'IA. |
+| 🏛️ **Gouvernance** (GO)  | Comprendre les enjeux de conformité, de gestion des risques et de responsabilité liés aux systèmes                   |
 
 ### Approche « Learn → Attack → Analyze → Defend »
 
@@ -105,7 +105,7 @@ Plutôt que de suivre les modules dans un ordre arbitraire, chaque parcours regr
 
 
 |              Path              | Description                                                                     | Module (dans l'ordre) |
-| :----------------------------: | :------------------------------------------------------------------------------ | --------------------- |
+| :----------------------------: | :------------------------------------------------------------------------------ | :---------------------: |
 | **🤖 AI Agents & MCP Security** | Étudier les risques liés aux agents IA, aux outils et au Model Context Protocol | 🚧                     |
 
 
@@ -147,7 +147,7 @@ Plutôt que de suivre les modules dans un ordre arbitraire, chaque parcours regr
 
 | #                  |         Module         |    Type     |  Format   | Domaine | Contenu                      | Niveau | Status |
 | ------------------ | :--------------------: | :---------: | :-------: | :-----: | :--------------------------- | :----: | :----: |
-| **FO-AUT-JWT-001** | Authentification - JWT | 📚 Fondation | 📖 Théorie |  AUTH   | JWT, JWS, JWK et application |   🟡    |   🚧    |
+| [**FO-AUT-JWT-001**](/FO/FO-AUT/FO-AUT-JWT/FO-AUT-JWT-001/FO-AUT-JWT-001.md) | Authentification - JWT | 📚 Fondation | 📖 Théorie |  AUTH   | JWT, JWS, JWK et application |   🟡    |   🚧    |
 
 </details>
 
@@ -174,11 +174,20 @@ Plutôt que de suivre les modules dans un ordre arbitraire, chaque parcours regr
 ### ⚔️ Attaques / Général
 
 <details>
-<summary>Injection</summary>
+<summary>Général</summary>
 
-| #                   | Module          |   Type   |   Format   |  Domaine  | Contenu                                                   | OWASP    | MITRE ATLAS | Niveau | Statut |
-| :------------------ | :-------------- | :------: | :--------: | :-------: | :-------------------------------------------------------- | :------- | :---------- | :----: | :----: |
-| **AT-INJ-SQLI-001** | *Injection SQL* | ⚔️ Attack | 💻 Hands-on | Injection | manipulation des requêtes SQL et extraction non autorisée | A05:2025 | T1190       |   🟢    |   🚧    |
+| #                   | Module          |    Type     |    Format    |  Domaine  | Contenu                                                   | OWASP    | MITRE ATT&CK | Niveau | Statut |
+| :------------------ | :-------------- | :---------: | :----------: | :-------: | :-------------------------------------------------------- | :------- | :---------- | :----: | :----: |
+| **AT-GEN-SQLI-001** | *Injection SQL* | ⚔️ Attack | 💻 Hands-on | Général | manipulation des requêtes SQL et extraction non autorisée | A05:2025 | T1190       |  🟢   |  🚧   |
+
+</details>
+
+<details>
+<summary>Authentification</summary>
+
+| #                   | Module          |    Type     |    Format    |  Domaine  | Contenu                                                   | OWASP    | MITRE ATT&CK | Niveau | Statut |
+| :------------------ | :-------------- | :---------: | :----------: | :-------: | :-------------------------------------------------------- | :------- | :----------: | :----: | :----: |
+|    **AT-AUTH-JWTA-001**                 |     *JWT attack*            |      ⚔️ Attack       |     💻 Hands-on         |     AUTH      |      alteration JWT, contrôle défaillant                                                      |   A01:2025<br>A07:2025       |     X        |     🟡   |  🚧   |
 
 </details>
 
@@ -187,8 +196,8 @@ Plutôt que de suivre les modules dans un ordre arbitraire, chaque parcours regr
 <details>
 <summary>Prompt Injection</summary>
 
-| #                 | Module             |   Type   |  Format   | Domaine | Contenu                 | OWASP      | MITRE ATLAS                | Niveau | Statut |
-| :---------------- | :----------------- | :------: | :-------: | :-----: | :---------------------- | :--------- | :------------------------- | :----: | :----: |
+| #                                                                        | Module             |   Type   |  Format   | Domaine | Contenu                 | OWASP      | MITRE ATLAS                | Niveau | Statut |
+| :----------------------------------------------------------------------- | :----------------- | :------: | :-------: | :-----: | :---------------------- | :--------- | :------------------------- | :----: | :----: |
 | [**AT-LLM-PI-001**](/AT/AT-LLM/AT-LLM-PI/AT-LLM-PI-001/AT-LLM-PI-001.md) | *Prompt Injection* | ⚔️ Attack | 📖 Théorie |   LLM   | Direct Prompt Injection | LLM01:2025 | AML.T0051.000<br>AML.T0054 |   🟢    |   ✔️    |
 
 </details>
@@ -215,7 +224,7 @@ Plutôt que de suivre les modules dans un ordre arbitraire, chaque parcours regr
 
 | #                  | Module                               |     Type      |  Format   |   Domaine    | Contenu                             | Niveau | Statut |
 | :----------------- | :----------------------------------- | :-----------: | :-------: | :----------: | :---------------------------------- | :----: | :----: |
-| **GOV-TM-TMO-001** | Threat Model - Concepts fondamentaux | 🏛️ Gouvernance | 📖 Théorie | Threat Model | Standards, modèle et représentation |   🟡    |   🚧    |
+| **GO-TM-TMO-001** | Threat Model - Concepts fondamentaux | 🏛️ Gouvernance | 📖 Théorie | Threat Model | Standards, modèle et représentation |   🟡    |   🚧    |
 
 </details>
 
@@ -226,7 +235,7 @@ Plutôt que de suivre les modules dans un ordre arbitraire, chaque parcours regr
 
 | #                     | Module   |  Type   |   Format   | Domaine | Contenu                     | Niveau | Statut |
 | :-------------------- | :------- | :-----: | :--------: | :-----: | :-------------------------- | :----: | :----: |
-| **TOOL-MCP-DAST-001** | MCP DAST | 🛠️ Outil | 💻 Hands-on |   MCP   | Analyse dynamique Black-Box |   🔴🔴   |   🚧    |
+| **OU-MCP-DAST-001** | MCP DAST | 🛠️ Outil | 💻 Hands-on |   MCP   | Analyse dynamique Black-Box |   🔴🔴   |   🚧    |
 
 </details>
 
