@@ -39,13 +39,13 @@ Ce repository propose une **approche progressive** et concrète, avec des explic
 
 Le parcours est divisé en **6 sections**:
 
-| Domaine            | Description                                                                                                          |
-| :------------------: | -------------------------------------------------------------------------------------------------------------------- |
-| 📚 **Fondations** (FO)  | Acquérir les fondamentaux pour comprendre les concepts                                                               |
-| ⚔️ **Attaque** (AT)     | Modéliser les surfaces d'attaque, les vecteurs d'exploitation et les impacts                                         |
-| 🔒 **Défense** (DE)     | Comprendre les principes, techniques et mécanismes permettant de sécuriser les systèmes                              |
+|         Domaine         | Description                                                                                                          |
+| :---------------------: | -------------------------------------------------------------------------------------------------------------------- |
+|  📚 **Fondations** (FO)  | Acquérir les fondamentaux pour comprendre les concepts                                                               |
+|   ⚔️ **Attaque** (AT)    | Modéliser les surfaces d'attaque, les vecteurs d'exploitation et les impacts                                         |
+|   🔒 **Défense** (DE)    | Comprendre les principes, techniques et mécanismes permettant de sécuriser les systèmes                              |
 | 🏗️ **Architecture** (AR) | Comprendre la conception, le déploiement et la mise en production                                                    |
-| 🛠️ **Outil** (OU)       | Maîtriser les frameworks et outils nécessaires pour développer, tester, observer et sécuriser des applications d'IA. |
+|    🛠️ **Outils** (OU)    | Maîtriser les frameworks et outils nécessaires pour développer, tester, observer et sécuriser des applications d'IA. |
 | 🏛️ **Gouvernance** (GO)  | Comprendre les enjeux de conformité, de gestion des risques et de responsabilité liés aux systèmes                   |
 
 ### Approche « Learn → Attack → Analyze → Defend »
@@ -105,8 +105,8 @@ Plutôt que de suivre les modules dans un ordre arbitraire, chaque parcours regr
 
 
 |              Path              | Description                                                                     | Module (dans l'ordre) |
-| :----------------------------: | :------------------------------------------------------------------------------ | :---------------------: |
-| **🤖 AI Agents & MCP Security** | Étudier les risques liés aux agents IA, aux outils et au Model Context Protocol | 🚧                     |
+| :----------------------------: | :------------------------------------------------------------------------------ | :-------------------: |
+| **🤖 AI Agents & MCP Security** | Étudier les risques liés aux agents IA, aux outils et au Model Context Protocol |           🚧           |
 
 
 > [!IMPORTANT]
@@ -145,9 +145,9 @@ Plutôt que de suivre les modules dans un ordre arbitraire, chaque parcours regr
 <details>
 <summary>Authentification</summary>
 
-| #                  |         Module         |    Type     |  Format   | Domaine | Contenu                      | Niveau | Status |
-| ------------------ | :--------------------: | :---------: | :-------: | :-----: | :--------------------------- | :----: | :----: |
-| [**FO-AUT-JWT-001**](/FO/FO-AUT/FO-AUT-JWT/FO-AUT-JWT-001/FO-AUT-JWT-001.md) | Authentification - JWT | 📚 Fondation | 📖 Théorie |  AUTH   | JWT, JWS, JWK et application |   🟡    |   🚧    |
+| #                                                                            |         Module         |    Type     |  Format   | Domaine | Contenu                      | Niveau | Status |
+| ---------------------------------------------------------------------------- | :--------------------: | :---------: | :-------: | :-----: | :--------------------------- | :----: | :----: |
+| [**FO-AUT-JWT-001**](/FO/FO-AUT/FO-AUT-JWT/FO-AUT-JWT-001/FO-AUT-JWT-001.md) | Authentification - JWT | 📚 Fondation | 📖 Théorie |  AUTH   | JWT, JWS, JWK et application |   🟡    |   ✔️    |
 
 </details>
 
@@ -176,18 +176,18 @@ Plutôt que de suivre les modules dans un ordre arbitraire, chaque parcours regr
 <details>
 <summary>Général</summary>
 
-| #                   | Module          |    Type     |    Format    |  Domaine  | Contenu                                                   | OWASP    | MITRE ATT&CK | Niveau | Statut |
-| :------------------ | :-------------- | :---------: | :----------: | :-------: | :-------------------------------------------------------- | :------- | :---------- | :----: | :----: |
-| **AT-GEN-SQLI-001** | *Injection SQL* | ⚔️ Attack | 💻 Hands-on | Général | manipulation des requêtes SQL et extraction non autorisée | A05:2025 | T1190       |  🟢   |  🚧   |
+| #                   | Module          |   Type   |   Format   | Domaine | Contenu                                                   | OWASP    | MITRE ATT&CK | Niveau | Statut |
+| :------------------ | :-------------- | :------: | :--------: | :-----: | :-------------------------------------------------------- | :------- | :----------- | :----: | :----: |
+| **AT-GEN-SQLI-001** | *Injection SQL* | ⚔️ Attack | 💻 Hands-on | Général | manipulation des requêtes SQL et extraction non autorisée | A05:2025 | T1190        |   🟢    |   🚧    |
 
 </details>
 
 <details>
 <summary>Authentification</summary>
 
-| #                   | Module          |    Type     |    Format    |  Domaine  | Contenu                                                   | OWASP    | MITRE ATT&CK | Niveau | Statut |
-| :------------------ | :-------------- | :---------: | :----------: | :-------: | :-------------------------------------------------------- | :------- | :----------: | :----: | :----: |
-|    **AT-AUTH-JWTA-001**                 |     *JWT attack*            |      ⚔️ Attack       |     💻 Hands-on         |     AUTH      |      alteration JWT, contrôle défaillant                                                      |   A01:2025<br>A07:2025       |     X        |     🟡   |  🚧   |
+| #                    | Module       |   Type   |   Format   | Domaine | Contenu                             | OWASP                | MITRE ATT&CK | Niveau | Statut |
+| :------------------- | :----------- | :------: | :--------: | :-----: | :---------------------------------- | :------------------- | :----------: | :----: | :----: |
+| **AT-AUTH-JWTA-001** | *JWT attack* | ⚔️ Attack | 💻 Hands-on |  AUTH   | alteration JWT, contrôle défaillant | A01:2025<br>A07:2025 |      X       |   🟡    |   🚧    |
 
 </details>
 
@@ -217,24 +217,24 @@ Plutôt que de suivre les modules dans un ordre arbitraire, chaque parcours regr
 
 ### 🔒 Defense
 
-### 🏛️ Management du risque AI, audit et gouvernance
+### 🏛️ Gouvernance
 
 <details>
 <summary>Threat Model</summary>
 
-| #                  | Module                               |     Type      |  Format   |   Domaine    | Contenu                             | Niveau | Statut |
-| :----------------- | :----------------------------------- | :-----------: | :-------: | :----------: | :---------------------------------- | :----: | :----: |
-| **GO-TM-TMO-001** | Threat Model - Concepts fondamentaux | 🏛️ Gouvernance | 📖 Théorie | Threat Model | Standards, modèle et représentation |   🟡    |   🚧    |
-
+| #                 | Module                               |     Type      |   Format   |   Domaine    | Contenu                   | Niveau | Statut |
+| :---------------- | :----------------------------------- | :-----------: | :--------: | :----------: | :------------------------ | :----: | :----: |
+| [**GO-TM-TMC-001**](/GO/GO-TM/GO-TM-TMC/GO-TM-TMC-001/GO-TM-TMC-001.md) | Threat Model - Concepts fondamentaux | 🏛️ Gouvernance | 📖 Théorie  | Threat Model | Définitions et concepts   |   🟢    |    ✔️    |
+| [**GO-TM-TMC-002**](/GO/GO-TM/GO-TM-TMC/GO-TM-TMC-002/GO-TM-TMC-002.md) | Threat Model - Concepts fondamentaux | 🏛️ Gouvernance | 💻 Hands-on | Threat Model | Cas appliqué et framework |   🟡    |    ✔️    |
 </details>
 
-### 🛠️ Développement d'outil Red Teaming
+### 🛠️ Outils
 
 <details>
 <summary>Model Context Protocol</summary>
 
-| #                     | Module   |  Type   |   Format   | Domaine | Contenu                     | Niveau | Statut |
-| :-------------------- | :------- | :-----: | :--------: | :-----: | :-------------------------- | :----: | :----: |
+| #                   | Module   |  Type   |   Format   | Domaine | Contenu                     | Niveau | Statut |
+| :------------------ | :------- | :-----: | :--------: | :-----: | :-------------------------- | :----: | :----: |
 | **OU-MCP-DAST-001** | MCP DAST | 🛠️ Outil | 💻 Hands-on |   MCP   | Analyse dynamique Black-Box |   🔴🔴   |   🚧    |
 
 </details>

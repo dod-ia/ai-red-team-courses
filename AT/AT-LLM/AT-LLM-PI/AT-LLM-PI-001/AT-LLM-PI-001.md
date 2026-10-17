@@ -52,7 +52,7 @@ Dans le cadre de ces attaques, nous utiliserons un LLM possédant un secret stoc
 > La stochasticité du système peut entraîner des sorties différentes pour un même prompt. Une attaque peut donc être **évaluée sur plusieurs exécutions** afin d'estimer sa probabilité de succès.
 
 > [!NOTE]
-> Les exemples sont essentiellement illustratifs. Ils ne doivent pas être considérés comme expérimentales ou ayant une utilité opérationnelle. Pour des résultats expérimentaux, voir la section [ANALIZE](./analyze.md).
+> Les exemples sont essentiellement illustratifs. Ils ne doivent pas être considérés comme expérimentales ou ayant une utilité opérationnelle.
 
 ### Baseline - Absence de politique de confidentialité
 
