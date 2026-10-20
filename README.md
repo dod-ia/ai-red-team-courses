@@ -205,13 +205,13 @@ Plutôt que de suivre les modules dans un ordre arbitraire, chaque parcours regr
 <details>
 <summary>Model Context Protocol</summary>
 
-| #                   | Module                                   |   Type   |   Format   | Domaine | Contenu                                                                                              | OWASP                    | MITRE ATLAS   | Niveau | Statut |
-| :------------------ | :--------------------------------------- | :------: | :--------: | :-----: | :--------------------------------------------------------------------------------------------------- | :----------------------- | :------------ | :----: | :----: |
-| **AT-MCP-MCPA-001** | *MCP Attack — Injection Vulnerabilities* | ⚔️ Attack | 💻 Hands-on |   MCP   | Exploitation d'entrées non fiables, notamment par injection de commandes, de code ou de requêtes SQL | A05:2025<br>MCP05:2025   | AML.T0050     |   🟡    |   🚧    |
-| **AT-MCP-MCPA-002** | *MCP Attack — Excessive Agency*          | ⚔️ Attack | 💻 Hands-on |   MCP   | Abus de capacités ou de permissions excessives accordées à un agent ou à ses outils                  | MCP02:2025<br>LLM06:2025 | AML.T0053     |   🟡    |   🚧    |
-| **AT-MCP-MCPA-003** | *MCP Attack — Tool Poisoning*            | ⚔️ Attack | 💻 Hands-on |   MCP   | Manipulation des descriptions d'outils ou de leurs métadonnées pour influencer le client             | MCP03:2025               | AML.T0110.000 |   🟡    |   🚧    |
-| **AT-MCP-MCPA-004** | *MCP Attack — Rug Pull*                  | ⚔️ Attack | 💻 Hands-on |   MCP   | Modification malveillante du comportement d'un outil après sa validation initiale                    | MCP03:2025               | AML.T0109     |   🔴    |   🚧    |
-| **AT-MCP-MCPA-005** | *MCP Attack — Tool Shadowing*            | ⚔️ Attack | 💻 Hands-on |   MCP   | Exploitation d'outils homonymes, ambigus ou concurrents pour détourner le choix du client            | MCP03:2025               | AML.T0110.000 |   🟡    |   🚧    |
+| #                                                                                | Module                                   |   Type   |   Format   | Domaine | Contenu                                                                                              | OWASP                    | MITRE ATLAS    | CWE                    | Niveau | Statut |
+| :------------------------------------------------------------------------------- | :--------------------------------------- | :------: | :--------: | :-----: | :--------------------------------------------------------------------------------------------------- | :----------------------- | :------------- | :--------------------- | :----: | :----: |
+| [**AT-MCP-MCPA-001**](/AT/AT-MCP/AT-MCP-MCPA/AT-MCP-MCPA-001/AT-MCP-MCPA-001.md) | *MCP Attack — Injection Vulnerabilities* | ⚔️ Attack | 💻 Hands-on |   MCP   | Exploitation d'entrées non fiables, notamment par injection de commandes, de code ou de requêtes SQL | A05:2025<br>MCP05:2025   | ∅              | CWE-89, CWE-78, CWE-94 |   🟢    |   ✔️    |
+| **AT-MCP-MCPA-002**                                                              | *MCP Attack — Excessive Agency*          | ⚔️ Attack | 💻 Hands-on |   MCP   | Abus de capacités ou de permissions excessives accordées à un agent ou à ses outils                  | MCP02:2025<br>LLM06:2025 | AML.T0053*     | CWE-250, CWE-862       |   🟡    |   🚧    |
+| **AT-MCP-MCPA-003**                                                              | *MCP Attack — Tool Poisoning*            | ⚔️ Attack | 💻 Hands-on |   MCP   | Manipulation des descriptions d'outils ou de leurs métadonnées pour influencer le client             | MCP03:2025               | AML.T0110.000* | CWE-20, CWE-74         |   🟡    |   🚧    |
+| **AT-MCP-MCPA-004**                                                              | *MCP Attack — Rug Pull*                  | ⚔️ Attack | 💻 Hands-on |   MCP   | Modification malveillante du comportement d'un outil après sa validation initiale                    | MCP03:2025               | AML.T0109*     | CWE-345, CWE-494       |   🔴    |   🚧    |
+| **AT-MCP-MCPA-005**                                                              | *MCP Attack — Tool Shadowing*            | ⚔️ Attack | 💻 Hands-on |   MCP   | Exploitation d'outils homonymes, ambigus ou concurrents pour détourner le choix du client            | MCP03:2025               | AML.T0110.000* | CWE-436, CWE-693       |   🟡    |   🚧    |
 
 </details>
 
@@ -222,10 +222,10 @@ Plutôt que de suivre les modules dans un ordre arbitraire, chaque parcours regr
 <details>
 <summary>Threat Model</summary>
 
-| #                 | Module                               |     Type      |   Format   |   Domaine    | Contenu                   | Niveau | Statut |
-| :---------------- | :----------------------------------- | :-----------: | :--------: | :----------: | :------------------------ | :----: | :----: |
-| [**GO-TM-TMC-001**](/GO/GO-TM/GO-TM-TMC/GO-TM-TMC-001/GO-TM-TMC-001.md) | Threat Model - Concepts fondamentaux | 🏛️ Gouvernance | 📖 Théorie  | Threat Model | Définitions et concepts   |   🟢    |    ✔️    |
-| [**GO-TM-TMC-002**](/GO/GO-TM/GO-TM-TMC/GO-TM-TMC-002/GO-TM-TMC-002.md) | Threat Model - Concepts fondamentaux | 🏛️ Gouvernance | 💻 Hands-on | Threat Model | Cas appliqué et framework |   🟡    |    ✔️    |
+| #                                                                       | Module                               |     Type      |   Format   |   Domaine    | Contenu                   | Niveau | Statut |
+| :---------------------------------------------------------------------- | :----------------------------------- | :-----------: | :--------: | :----------: | :------------------------ | :----: | :----: |
+| [**GO-TM-TMC-001**](/GO/GO-TM/GO-TM-TMC/GO-TM-TMC-001/GO-TM-TMC-001.md) | Threat Model - Concepts fondamentaux | 🏛️ Gouvernance | 📖 Théorie  | Threat Model | Définitions et concepts   |   🟢    |   ✔️    |
+| [**GO-TM-TMC-002**](/GO/GO-TM/GO-TM-TMC/GO-TM-TMC-002/GO-TM-TMC-002.md) | Threat Model - Concepts fondamentaux | 🏛️ Gouvernance | 💻 Hands-on | Threat Model | Cas appliqué et framework |   🟡    |   ✔️    |
 </details>
 
 ### 🛠️ Outils

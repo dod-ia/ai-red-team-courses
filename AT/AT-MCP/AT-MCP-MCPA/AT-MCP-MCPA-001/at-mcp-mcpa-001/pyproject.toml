@@ -1,0 +1,21 @@
+[project]
+name = "at-mcp-mcpa-001"
+version = "0.1.0"
+description = "Simple SQL injection in a MCP Tool"
+readme = "README.md"
+authors = [
+    { name = "dod-ia", email = "" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "mcp[cli]>=2.3.0",
+    "python-dotenv>=1.2.4",
+    "rich>=15.0.0",
+]
+
+[project.scripts]
+at-mcp-mcpa-001 = "at_mcp_mcpa_001:main"
+
+[build-system]
+requires = ["uv_build>=0.13.2,<0.14.0"]
+build-backend = "uv_build"
