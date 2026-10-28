@@ -3,3 +3,5 @@ __pycache__/
 .venv/
 enterprise_database.db
 opencode.json
+credentials.json
+token.json

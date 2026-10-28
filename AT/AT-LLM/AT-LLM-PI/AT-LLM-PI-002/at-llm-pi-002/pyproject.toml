@@ -1,0 +1,29 @@
+[project]
+name = "at-llm-pi-002"
+version = "0.1.0"
+description = "Indirect prompt injection laboratory"
+readme = "README.md"
+authors = [
+    { name = "dod-ia", email = "32083095+dod-ia@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "google-auth-oauthlib>=1.5.0",
+    "langchain>=1.4.7",
+    "langchain-community>=0.4.2",
+    "langchain-google-community>=5.1.1",
+    "langchain-google-genai>=4.4.2",
+    "langchain-mcp-adapters>=0.3.2",
+    "langchain-ollama>=1.1.0",
+    "langfuse>=5.0.4",
+    "langgraph>=1.2.17",
+    "rich>=15.0.0",
+]
+
+[project.scripts]
+at-llm-pi-002 = "at_llm_pi_002:main"
+
+[build-system]
+requires = ["uv_build>=0.13.2,<0.14.0"]
+build-backend = "uv_build"

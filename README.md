@@ -199,7 +199,7 @@ Plutôt que de suivre les modules dans un ordre arbitraire, chaque parcours regr
 | #                                                                        | Module             |   Type   |  Format   | Domaine | Contenu                 | OWASP      | MITRE ATLAS                | Niveau | Statut |
 | :----------------------------------------------------------------------- | :----------------- | :------: | :-------: | :-----: | :---------------------- | :--------- | :------------------------- | :----: | :----: |
 | [**AT-LLM-PI-001**](/AT/AT-LLM/AT-LLM-PI/AT-LLM-PI-001/AT-LLM-PI-001.md) | *Prompt Injection* | ⚔️ Attack | 📖 Théorie |   LLM   | Direct Prompt Injection | LLM01:2025 | AML.T0051.000<br>AML.T0054 |   🟢    |   ✔️    |
-
+| [**AT-LLM-PI-002**](/AT/AT-LLM/AT-LLM-PI/AT-LLM-PI-002/AT-LLM-PI-002.md) | *Indirect Prompt Injection* | ⚔️ Attack | 💻 Hands-on |   LLM   | Indirect Prompt Injection, système multi-agent | LLM01:2025 | AML.T0051.001<br>AML.T0053<br>AML.T0086 |   🟢    |   ✔️    |
 </details>
 
 <details>
@@ -216,6 +216,10 @@ Plutôt que de suivre les modules dans un ordre arbitraire, chaque parcours regr
 </details>
 
 ### 🔒 Defense
+
+| #                 |            Module             |    Type     |  Format   | Domaine | Contenu                      | Niveau | Status |
+| ----------------- | :---------------------------: | :---------: | :-------: | :-----: | :--------------------------- | :----: | :----: |
+| **DE-AG-PAI-001** | Sécurité des agents IA - Permission, accès et isolation | 🔒 Defense | 💻 Hands-on |   AG    | Sandboxing, droits des tools, system prompt |   🟡    |   🚧    |
 
 ### 🏛️ Gouvernance
 
