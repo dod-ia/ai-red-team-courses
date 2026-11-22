@@ -13,7 +13,7 @@
 
 Bienvenue dans un parcours hands-on dédié à l'**AI Red Teaming**.
 
-Ce repository a un objectif simple : **apprendre à attaquer les systèmes d'IA pour mieux les défendre**.
+Ce repository a un objectif simple : **apprendre à concevoir, attaquer et protéger les systèmes d'IA pour mieux les défendre**.
 
 ✅ De la **théorie** pour comprendre les concepts  
 ✅ De la **pratique** pour comprendre leurs applications  
@@ -48,18 +48,23 @@ Le parcours est divisé en **6 sections**:
 |    🛠️ **Outils** (OU)    | Maîtriser les frameworks et outils nécessaires pour développer, tester, observer et sécuriser des applications d'IA. |
 | 🏛️ **Gouvernance** (GO)  | Comprendre les enjeux de conformité, de gestion des risques et de responsabilité liés aux systèmes                   |
 
-### Approche « Learn → Attack → Analyze → Defend »
+### Approche « Learn → Attack → Defend → Deploy»
 
-L'explication d'une attaque suit un **pattern en 4 étapes**:
+L'explication d'un concept suit (généralement) un **pattern en 4 étapes**:
 
-| Étape         | Description                                                   |
-| ------------- | ------------------------------------------------------------- |
-| 📚 **Learn**   | Comprendre les concepts, architectures et vecteurs d'attaque. |
-| 🧪 **Attack**  | Expliquer les techniques offensives.                          |
-| 🔬 **Analyze** | Reproduire et évaluer les attaques dans des labs contrôlés.   |
-| 🛡️ **Defend**  | Identifier les mitigations et renforcer le système.           |
+| Étape            | Description                                                       |
+| ---------------- | ----------------------------------------------------------------- |
+| 📚 **Learn**      | Acquérir les fondamentaux théoriques.                             |
+| 🧪 **Attack**     | Expliquer les techniques offensives et les mettre en application. |
+| 🔬 **Defend**     | Sécuriser et contrôler l'application.                            |
+| 🛡️ **Deployment** | Déployer une application avec les contraintes de la production.   |
 
-Chaque module associe les **fondamentaux** nécessaires à sa compréhension avec des **labs hands-on** permettant d’expérimenter directement sur des scénarios réalistes.
+Chaque module peut être de **deux types**:
+
+| Type       | Description                                         |
+| ---------- | --------------------------------------------------- |
+| 📖 Théorie  | Contenu théorique exclusivement.                    |
+| 💻 Hands-on | *Labs hands-on* pour une mise en pratique concrète. |
 
 > **Don't just read. Build. Break. Fix.**
 
@@ -104,9 +109,10 @@ Les **Learning Paths** ont pour objectif d'organiser les modules selon des objec
 Plutôt que de suivre les modules dans un ordre arbitraire, chaque parcours regroupera les notions théoriques, les techniques d'analyse et les exercices pratiques nécessaires pour atteindre un objectif précis.
 
 
-|              Path              | Description                                                                     | Module (dans l'ordre) |
-| :----------------------------: | :------------------------------------------------------------------------------ | :-------------------: |
-| **🤖 AI Agents & MCP Security** | Étudier les risques liés aux agents IA, aux outils et au Model Context Protocol |           🚧           |
+|                      Path                       | Description                                                                                  | Module (dans l'ordre) |
+| :---------------------------------------------: | :------------------------------------------------------------------------------------------- | :-------------------: |
+| **🔌 Serveur MCP, sécurité et déploiement** | Développer un serveur MCP sécurisé et apte à la production |           🚧           |
+| **🤖 Agents IA & Développement d'un harness sécurisé** | Développer un écosystème complet pour un agent IA sécurisé (Harness, MCP, A2A) de production |           🚧           |
 
 
 > [!IMPORTANT]
@@ -122,6 +128,15 @@ Plutôt que de suivre les modules dans un ordre arbitraire, chaque parcours regr
 > 🔴 Avancé
 
 ### 📚 Fondations
+
+<details>
+<summary>Agentic IA</summary>
+
+| #                                                                        |          Module          |    Type     |  Format   | Domaine | Contenu                      | Niveau | Status |
+| ------------------------------------------------------------------------ | :----------------------: | :---------: | :-------: | :-----: | :--------------------------- | :----: | :----: |
+| **FO-AG-PC-001** | Qu'est-ce qu'un Agent IA | 📚 Fondation | 📖 Théorie |   AG   | Harness, LLM |   🟢    |   🚧    |
+
+</details>
 
 <details>
 <summary>Prompt et Contexte</summary>
@@ -174,15 +189,6 @@ Plutôt que de suivre les modules dans un ordre arbitraire, chaque parcours regr
 ### ⚔️ Attaques / Général
 
 <details>
-<summary>Général</summary>
-
-| #                   | Module          |   Type   |   Format   | Domaine | Contenu                                                   | OWASP    | MITRE ATT&CK | Niveau | Statut |
-| :------------------ | :-------------- | :------: | :--------: | :-----: | :-------------------------------------------------------- | :------- | :----------- | :----: | :----: |
-| **AT-GEN-SQLI-001** | *Injection SQL* | ⚔️ Attack | 💻 Hands-on | Général | manipulation des requêtes SQL et extraction non autorisée | A05:2025 | T1190        |   🟢    |   🚧    |
-
-</details>
-
-<details>
 <summary>Authentification</summary>
 
 | #                    | Module       |   Type   |   Format   | Domaine | Contenu                             | OWASP                | MITRE ATT&CK | Niveau | Statut |
@@ -196,9 +202,9 @@ Plutôt que de suivre les modules dans un ordre arbitraire, chaque parcours regr
 <details>
 <summary>Prompt Injection</summary>
 
-| #                                                                        | Module             |   Type   |  Format   | Domaine | Contenu                 | OWASP      | MITRE ATLAS                | Niveau | Statut |
-| :----------------------------------------------------------------------- | :----------------- | :------: | :-------: | :-----: | :---------------------- | :--------- | :------------------------- | :----: | :----: |
-| [**AT-LLM-PI-001**](/AT/AT-LLM/AT-LLM-PI/AT-LLM-PI-001/AT-LLM-PI-001.md) | *Prompt Injection* | ⚔️ Attack | 📖 Théorie |   LLM   | Direct Prompt Injection | LLM01:2025 | AML.T0051.000<br>AML.T0054 |   🟢    |   ✔️    |
+| #                                                                        | Module                      |   Type   |   Format   | Domaine | Contenu                                        | OWASP      | MITRE ATLAS                             | Niveau | Statut |
+| :----------------------------------------------------------------------- | :-------------------------- | :------: | :--------: | :-----: | :--------------------------------------------- | :--------- | :-------------------------------------- | :----: | :----: |
+| [**AT-LLM-PI-001**](/AT/AT-LLM/AT-LLM-PI/AT-LLM-PI-001/AT-LLM-PI-001.md) | *Prompt Injection*          | ⚔️ Attack | 📖 Théorie  |   LLM   | Direct Prompt Injection                        | LLM01:2025 | AML.T0051.000<br>AML.T0054              |   🟢    |   ✔️    |
 | [**AT-LLM-PI-002**](/AT/AT-LLM/AT-LLM-PI/AT-LLM-PI-002/AT-LLM-PI-002.md) | *Indirect Prompt Injection* | ⚔️ Attack | 💻 Hands-on |   LLM   | Indirect Prompt Injection, système multi-agent | LLM01:2025 | AML.T0051.001<br>AML.T0053<br>AML.T0086 |   🟡    |   ✔️    |
 </details>
 
@@ -220,9 +226,17 @@ Plutôt que de suivre les modules dans un ordre arbitraire, chaque parcours regr
 <details>
 <summary>Agentic IA et système multi-agents</summary>
 
-| #                 |            Module             |    Type     |  Format   | Domaine | Contenu                      | Niveau | Status |
-| ----------------- | :---------------------------: | :---------: | :-------: | :-----: | :--------------------------- | :----: | :----: |
-| **DE-AG-PAI-001** | Sécurité des agents IA - Permission, accès et isolation | 🔒 Defense | 💻 Hands-on |   AG    | Sandboxing, droits des tools, system prompt |   🟡    |   🚧    |
+| #                 |                         Module                          |   Type    |  Format   | Domaine | Contenu                                     | Niveau | Status |
+| ----------------- | :-----------------------------------------------------: | :-------: | :-------: | :-----: | :------------------------------------------ | :----: | :----: |
+| [**DE-AG-SAI-001**](/DE/AG/SAI/DE-AG-SAI-001.md) | Sécurité des agents IA - Harness sandboxing | 🔒 Defense | 📖 Théorie |   AG    | Sandboxing, microsandbox |   🔴    |   ✔️    |
+</details>
+
+<details>
+<summary>Model Context Protocol</summary>
+
+| #                 |                         Module                          |   Type    |  Format   | Domaine | Contenu                                     | Niveau | Status |
+| ----------------- | :-----------------------------------------------------: | :-------: | :-------: | :-----: | :------------------------------------------ | :----: | :----: |
+| **DE-MCP-MCPAR-001** | Sécurité des serveurs MCP - Authentification et isolation | 🔒 Defense | 💻 Hands-on |   MCP   | guardrail, auth, agentgateway |   🔴    |   🚧    |
 </details>
 
 ### 🏛️ Gouvernance
@@ -230,20 +244,20 @@ Plutôt que de suivre les modules dans un ordre arbitraire, chaque parcours regr
 <details>
 <summary>Threat Model</summary>
 
-| #                                                                       | Module                               |     Type      |   Format   |   Domaine    | Contenu                   | Niveau | Statut |
-| :---------------------------------------------------------------------- | :----------------------------------- | :-----------: | :--------: | :----------: | :------------------------ | :----: | :----: |
-| [**GO-TM-TMC-001**](/GO/GO-TM/GO-TM-TMC/GO-TM-TMC-001/GO-TM-TMC-001.md) | Threat Model - Concepts fondamentaux | 🏛️ Gouvernance | 📖 Théorie  | Threat Model | Définitions et concepts   |   🟢    |   ✔️    |
-| [**GO-TM-TMC-002**](/GO/GO-TM/GO-TM-TMC/GO-TM-TMC-002/GO-TM-TMC-002.md) | Threat Model - Concepts fondamentaux | 🏛️ Gouvernance | 💻 Hands-on | Threat Model | Cas appliqué et framework |   🟡    |   ✔️    |
+| #                                                                       | Module                               |     Type      |   Format   | Domaine | Contenu                   | Niveau | Statut |
+| :---------------------------------------------------------------------- | :----------------------------------- | :-----------: | :--------: | :-----: | :------------------------ | :----: | :----: |
+| [**GO-TM-TMC-001**](/GO/GO-TM/GO-TM-TMC/GO-TM-TMC-001/GO-TM-TMC-001.md) | Threat Model - Concepts fondamentaux | 🏛️ Gouvernance | 📖 Théorie  |   TM    | Définitions et concepts   |   🟢    |   ✔️    |
+| [**GO-TM-TMC-002**](/GO/GO-TM/GO-TM-TMC/GO-TM-TMC-002/GO-TM-TMC-002.md) | Threat Model - Concepts fondamentaux | 🏛️ Gouvernance | 💻 Hands-on |   TM    | Cas appliqué et framework |   🟡    |   ✔️    |
 </details>
 
 ### 🛠️ Outils
 
 <details>
-<summary>Model Context Protocol</summary>
+<summary>Agent IA Harness</summary>
 
-| #                   | Module   |  Type   |   Format   | Domaine | Contenu                     | Niveau | Statut |
-| :------------------ | :------- | :-----: | :--------: | :-----: | :-------------------------- | :----: | :----: |
-| **OU-MCP-DAST-001** | MCP DAST | 🛠️ Outil | 💻 Hands-on |   MCP   | Analyse dynamique Black-Box |   🔴🔴   |   🚧    |
+| #                   | Module                             |  Type   |   Format   | Domaine | Contenu                         | Niveau | Statut |
+| :------------------ | :--------------------------------- | :-----: | :--------: | :-----: | :------------------------------ | :----: | :----: |
+| **OU-AIH-SHAR-001** | Construction d'un Harness sécurisé | 🛠️ Outil | 💻 Hands-on |   AIH   | Deep Agent, sécurité du harness |   🔴🔴   |   🚧    |
 
 </details>
 
