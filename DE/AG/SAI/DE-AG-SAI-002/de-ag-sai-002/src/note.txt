@@ -1,0 +1,88 @@
+EXO, faire le code avec admin qui a tous les droits 
+@auth.on.threads.update
+async def on_thread_update(ctx, value):
+
+    if "threads:update" not in ctx.permissions:
+        raise Auth.exceptions.HTTPException(
+            status_code=403,
+            detail="Permission denied"
+        )
+
+    if "admin" in ctx.permissions:
+        return {}
+
+    return {"owner": ctx.user.identity}
+
+expliquer le fonctionnement du return {"owner": ctx.user.identity}
+
+rbac+abac
+JWT	Identifier l'utilisateur
+Authentication	Vérifier son identité
+RBAC	Déterminer ses permissions selon son rôle
+ABAC	Contrôler l'accès selon des attributs (tenant, owner, etc.)
+Ownership	Limiter l'accès aux ressources appartenant à l'utilisateur
+
+
+
+
+
+La différence tient à la provenance des données et à qui a le droit d'écrire dedans lors d'une requête HTTP.
+
+1. Pourquoi config (RunnableConfig) est non sécurisé ?
+
+config est un dictionnaire ouvert contrôlé par le client (le navigateur, Postman ou ton script SDK).
+• Le client peut y mettre ce qu'il veut : Lors d'un appel client.runs.wait(..., config={"configurable": {"roles": ["admin"]}}), le serveur LangGraph prend le dictionnaire JSON envoyé par l'utilisateur et le fusionne directement dans config["configurable"].
+• Risque d'usurpation (Mass Assignment / Privilege Escalation) : Si ton code fait confiance à config["configurable"].get("roles") ou config["configurable"].get("langgraph_auth_user"), un attaquant peut forger une requête HTTP avec un faux dictionnaire dans config pour s'attribuer les droits admin, surtout si ton middleware @auth.on n'écrase pas explicitement ces clés.
+
+2. Pourquoi runtime (ServerRuntime) est sécurisé ?
+
+runtime est un objet Python interne construit exclusivement par le serveur LangGraph, inaccessible depuis le payload JSON du client.
+• Étanchéité au JSON client : Le client ne peut jamais envoyer un paramètre "runtime" ou "user" dans sa requête pour remplir runtime.user.
+• Alimenté uniquement par ton code d'authentification : Le serveur exécute d'abord ta fonction @auth.authenticate (qui vérifie cryptographiquement le token JWT ou la clé API dans l'en-tête Authorization), récupère l'objet utilisateur retourné, et l'injecte en lecture seule dans runtime.user.
+
+En résumé (modèle de confiance)
+
+
+Source de données	Qui la remplit ?	Niveau de confiance
+config["configurable"]	Le client (via le corps JSON de la requête HTTP).	Non fiable (peut être falsifié par l'utilisateur).
+runtime.user	Le serveur (après validation via @auth.authenticate).	Fiable (certifié par ton backend d'auth).
+runtime.execution_runtime.context	Le client / l'assistant (validé par context_schema).	Semi-fiable (paramètres métier comme system_prompt, jamais pour les droits).
+
+(Dans une optique Red Team / sécurité IA, c'est exactement la même règle qu'en développement web classique : ne jamais lire l'identité ou les rôles dans le body JSON de la requête (config), toujours les lire dans la session/token validé côté serveur (runtime.user)).
+Si tu veux tester ce vecteur d'attaque sur ton propre serveur local, dis-moi :
+• Si tu veux voir comment simuler une tentative d'usurpation via config dans un test Red Team
+• Si tu utilises @auth.on dans ton auth.py pour cloisonner l'accès aux threads et assistants par user_id
+
+
+Les 2 niveaux de sécurité RBAC (Bonne pratique)
+
+Dans une architecture sécurisée (et particulièrement en contexte Red Team / défense contre les prompt injections), on combine généralement deux niveaux :
+1. Niveau 1 — Filtrage dans make_graph (Surface d'attaque réduite) :
+Si un rôle n'a jamais le droit d'utiliser un outil (ex: supprimer_base), on ne le passe pas dans tools=[...] de create_deep_agent. Le LLM ignore son existence.
+2. Niveau 2 — Vérification dans l'outil via ToolRuntime (Défense en profondeur) :
+Si un outil est partagé entre plusieurs rôles avec des périmètres différents (comme consulter_dossier ci-dessus, ou un outil SQL qui doit filtrer WHERE owner_id = user_id), on vérifie runtime.server_info.user à l'intérieur de l'outil avant d'exécuter l'action.
+(Note : Si l'outil renvoie "Accès refusé...", le LLM reçoit ce message comme observation et explique proprement à l'utilisateur qu'il n'a pas les permissions nécessaires).
+
+context_schema=AssistantConfig indique exclusivement les paramètres utilisables via le paramètre context (et non configurable).
+Voici la correspondance exacte entre la déclaration côté serveur et l'envoi côté client :
+
+Déclaration dans create_deep_agent / StateGraph	Paramètre à envoyer côté client (runs.wait, assistants.create)	Où le lire côté serveur
+context_schema=AssistantConfig (Standard moderne)	context={"system_prompt": "..."}	runtime.execution_runtime.context (dans make_graph) ou runtime.context (dans un @tool / middleware)
+config_schema=AssistantConfig (Ancienne API / Deprecated)	config={"configurable": {"system_prompt": "..."}}	config["configurable"]
+
+
+Ce qu'il faut retenir
+
+• Si tu passes context={"system_prompt": "..."} : LangGraph le valide contre context_schema et le place dans runtime.
+• Si tu passes config={"configurable": {"system_prompt": "..."}} alors que tu as déclaré context_schema : LangGraph ne le mettra pas dans runtime.execution_runtime.context (il restera uniquement dans config["configurable"], sans validation de schéma).
+• LangGraph Studio (langgraph dev) : L'interface visuelle inspecte ton context_schema et envoie automatiquement les valeurs saisies dans le formulaire sous forme de context={...}.
+Si tu veux vérifier un point sur le comportement des requêtes, dis-moi :
+• Si tu testes avec LangGraph Studio ou uniquement via le SDK Python (langgraph_sdk)
+• Si tu as besoin de savoir ce qui se passe quand un client envoie un champ inconnu dans context (non déclaré dans AssistantConfig)
+
+Si vous utilisez l'API officielle de LangGraph (LangGraph Platform / Server), le serveur écrase automatiquement tout champ langgraph_auth_user envoyé par le client avec le résultat de votre middleware @auth.authenticate. Cependant, si vous exposez votre graphe via votre propre serveur (FastAPI, Flask, etc.) ou via un proxy, un client malveillant peut effectivement injecter un faux {"configurable": {"langgraph_auth_user": {"role": "admin"}}} dans sa requête.
+Pour éliminer totalement ce risque d'usurpation (spoofing), nettoyez l'entrée client avant d'exécuter le graphe et gérez l'authentification via un ContextVar Python ou une injection stricte côté serveur.
+
+1. Nettoyer systématiquement le config entrant (Anti-Spoofing)
+
+Si vous avez un endpoint API (ex: FastAPI) qui reçoit un config depuis le front-end, supprimez impérativement toute clé réservée avant de passer le config à LangGraph.

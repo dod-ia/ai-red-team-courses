@@ -6,6 +6,7 @@
 ![GenAI Security](https://img.shields.io/badge/GENAI_SECURITY-Break._Test._Secure.-8A2BE2?style=for-the-badge&logo=openai&logoColor=white)
 ![Agentic Security](https://img.shields.io/badge/AGENTIC_SECURITY-AI_Agents_%26_MCP-0891B2?style=for-the-badge&logo=anthropic&logoColor=white)
 ![Cyber Range](https://img.shields.io/badge/CYBER_RANGE-Hands--On_Labs-16A34A?style=for-the-badge&logo=docker&logoColor=white)
+![Deep Agent Harness](https://img.shields.io/badge/Deep_Agent_Harness-AI_Security-6C47FF?style=for-the-badge&logo=langchain&logoColor=white)
 
 **Learn. Attack. Analyze. Defend.**
 
@@ -19,7 +20,9 @@ Ce repository a un objectif simple : **apprendre à concevoir, attaquer et prot�
 ✅ De la **pratique** pour comprendre leurs applications  
 ✅ Pas de magie noire, ni de scripts incompréhensibles
 
-Ce repository propose une **approche progressive** et concrète, avec des explications claires, des **exemples détaillés** et des **environnements contrôlés** pour expérimenter les techniques d'AI Red Teaming.
+Ce répertoire propose une **approche progressive** et concrète, avec des explications claires, des **exemples détaillés** et des **environnements contrôlés** pour expérimenter les techniques d'AI Red Teaming.
+
+Ce répertoire utilisera la librairie [Deepagents (langchain)](https://github.com/langchain-ai/deepagents) pour réaliser les agents de tests. Il est possible que ponctuellement, d'autres *harness* soient utilisés.
 
 > [!WARNING]
 > ⚠️ Usage éthique uniquement !
@@ -56,7 +59,7 @@ L'explication d'un concept suit (généralement) un **pattern en 4 étapes**:
 | ---------------- | ----------------------------------------------------------------- |
 | 📚 **Learn**      | Acquérir les fondamentaux théoriques.                             |
 | 🧪 **Attack**     | Expliquer les techniques offensives et les mettre en application. |
-| 🔬 **Defend**     | Sécuriser et contrôler l'application.                            |
+| 🔬 **Defend**     | Sécuriser et contrôler l'application.                             |
 | 🛡️ **Deployment** | Déployer une application avec les contraintes de la production.   |
 
 Chaque module peut être de **deux types**:
@@ -109,9 +112,9 @@ Les **Learning Paths** ont pour objectif d'organiser les modules selon des objec
 Plutôt que de suivre les modules dans un ordre arbitraire, chaque parcours regroupera les notions théoriques, les techniques d'analyse et les exercices pratiques nécessaires pour atteindre un objectif précis.
 
 
-|                      Path                       | Description                                                                                  | Module (dans l'ordre) |
-| :---------------------------------------------: | :------------------------------------------------------------------------------------------- | :-------------------: |
-| **🔌 Serveur MCP, sécurité et déploiement** | Développer un serveur MCP sécurisé et apte à la production |           🚧           |
+|                         Path                          | Description                                                                                  | Module (dans l'ordre) |
+| :---------------------------------------------------: | :------------------------------------------------------------------------------------------- | :-------------------: |
+|      **🔌 Serveur MCP, sécurité et déploiement**       | Développer un serveur MCP sécurisé et apte à la production                                   |           🚧           |
 | **🤖 Agents IA & Développement d'un harness sécurisé** | Développer un écosystème complet pour un agent IA sécurisé (Harness, MCP, A2A) de production |           🚧           |
 
 
@@ -132,9 +135,9 @@ Plutôt que de suivre les modules dans un ordre arbitraire, chaque parcours regr
 <details>
 <summary>Agentic IA</summary>
 
-| #                                                                        |          Module          |    Type     |  Format   | Domaine | Contenu                      | Niveau | Status |
-| ------------------------------------------------------------------------ | :----------------------: | :---------: | :-------: | :-----: | :--------------------------- | :----: | :----: |
-| **FO-AG-PC-001** | Qu'est-ce qu'un Agent IA | 📚 Fondation | 📖 Théorie |   AG   | Harness, LLM |   🟢    |   🚧    |
+| #                |          Module          |    Type     |  Format   | Domaine | Contenu      | Niveau | Status |
+| ---------------- | :----------------------: | :---------: | :-------: | :-----: | :----------- | :----: | :----: |
+| **FO-AG-PC-001** | Qu'est-ce qu'un Agent IA | 📚 Fondation | 📖 Théorie |   AG    | Harness, LLM |   🟢    |   🚧    |
 
 </details>
 
@@ -226,16 +229,18 @@ Plutôt que de suivre les modules dans un ordre arbitraire, chaque parcours regr
 <details>
 <summary>Agentic IA et système multi-agents</summary>
 
-| #                 |                         Module                          |   Type    |  Format   | Domaine | Contenu                                     | Niveau | Status |
-| ----------------- | :-----------------------------------------------------: | :-------: | :-------: | :-----: | :------------------------------------------ | :----: | :----: |
-| [**DE-AG-SAI-001**](/DE/AG/SAI/DE-AG-SAI-001.md) | Sécurité des agents IA - Harness sandboxing | 🔒 Defense | 📖 Théorie |   AG    | Sandboxing, microsandbox |   🔴    |   ✔️    |
+| #                                                |                                Module                                |   Type    |   Format   | Domaine | Contenu                  | Niveau | Status |
+| ------------------------------------------------ | :------------------------------------------------------------------: | :-------: | :--------: | :-----: | :----------------------- | :----: | :----: |
+| [**DE-AG-SAI-001**](/DE/AG/SAI/DE-AG-SAI-001/DE-AG-SAI-001.md) |             Sécurité des agents IA - Harness sandboxing              | 🔒 Defense | 💻 Hands-on |   AG    | Sandboxing, microsandbox |   🔴    |   ✔️    |
+| [**DE-AG-SAI-002**](DE/AG/SAI/DE-AG-SAI-002/DE-AG-SAI-002.md) | Sécurité des agents IA - Authentification et gestion des permissions | 🔒 Defense | 💻 Hands-on |   AG    | Auth, role, JWS, runtime |   🟡    |   ✔️    |
+
 </details>
 
 <details>
 <summary>Model Context Protocol</summary>
 
-| #                 |                         Module                          |   Type    |  Format   | Domaine | Contenu                                     | Niveau | Status |
-| ----------------- | :-----------------------------------------------------: | :-------: | :-------: | :-----: | :------------------------------------------ | :----: | :----: |
+| #                    |                          Module                           |   Type    |   Format   | Domaine | Contenu                       | Niveau | Status |
+| -------------------- | :-------------------------------------------------------: | :-------: | :--------: | :-----: | :---------------------------- | :----: | :----: |
 | **DE-MCP-MCPAR-001** | Sécurité des serveurs MCP - Authentification et isolation | 🔒 Defense | 💻 Hands-on |   MCP   | guardrail, auth, agentgateway |   🔴    |   🚧    |
 </details>
 

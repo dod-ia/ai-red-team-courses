@@ -1,0 +1,13 @@
+[project]
+name = "de-ag-sai-002"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "deepagents>=0.7.41",
+    "dotenv>=0.9.9",
+    "langchain-backend-microsandbox>=0.1.1",
+    "langgraph>=1.2.24",
+    "langgraph-cli[inmem]>=0.4.43",
+    "langgraph-sdk>=0.4.14",
+    "pyjwt>=2.15.1",
+]
