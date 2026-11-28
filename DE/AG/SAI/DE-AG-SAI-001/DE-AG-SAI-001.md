@@ -8,7 +8,7 @@
 
 ## Imaginez le scénario suivant…
 
-![](/DE/AG/SAI/images/scenario.png)
+![](/DE/AG/SAI/DE-AG-SAI-001/images/scenario.png)
 
 Vous demandez à un agent IA de développer un script Python pour analyser des fichiers présents sur votre machine.
 
@@ -57,11 +57,11 @@ Une *sandbox* doit contrôler et isoler les différentes ressources du système 
 
 Pour éviter qu'une compromission de l'agent ne se propage au système hôte, il est essentiel de définir des frontières de sécurité strictes et d'imposer des contrôles à chaque niveau.
 
-![](/DE/AG/SAI/images/frontiere_securite.png)
+![](/DE/AG/SAI/DE-AG-SAI-001/images/frontiere_securite.png)
 
 #### Sandbox et *filesystem*
 
-![](/DE/AG/SAI/images/filesystem.png)
+![](/DE/AG/SAI/DE-AG-SAI-001/images/filesystem.png)
 
 Le système de fichiers constitue une surface d'exposition importante pour un agent IA. Sans restrictions, celui-ci peut accéder à des fichiers sensibles ou modifier des ressources du système hôte.
 
@@ -72,7 +72,7 @@ La *sandbox* permet de restreindre cet accès aux seuls répertoires nécessaire
 
 #### Sandbox et réseau
 
-![](/DE/AG/SAI/images/reseau.png)
+![](/DE/AG/SAI/DE-AG-SAI-001/images/reseau.png)
 
 Une *sandbox* peut être isolée du système hôte tout en **conservant un accès à Internet**. L'isolation du système de fichiers ne garantit donc pas celle des communications réseau.
 
@@ -84,7 +84,7 @@ Il est recommandé **de désactiver le réseau par défaut** lorsqu'il n'est pas
 
 #### Sandbox et exposition des secrets
 
-![](/DE/AG/SAI/images/secrets.png)
+![](/DE/AG/SAI/DE-AG-SAI-001/images/secrets.png)
 
 L'environnement d'exécution d'une *sandbox* reste comparable à un système informatique classique : il peut être ciblé par des attaques telles que l'exécution de code malveillant ou l'exploitation de vulnérabilités.
 
@@ -113,7 +113,7 @@ Le *sandboxing* intervient généralement au niveau de l'exécution des outils d
 
 L'agent ne communique pas directement avec le système hôte : il passe par le harness, qui contrôle les appels aux outils, vérifie les permissions et délègue leur exécution à un environnement isolé. **Les restrictions doivent être imposées techniquement pendant toute l'exécution, et non simplement vérifiées avant le lancement de l'outil**.
 
-![](/DE/AG/SAI/images/sandbox_harness.png)
+![](/DE/AG/SAI/DE-AG-SAI-001/images/sandbox_harness.png)
 
 ### Les principales technologies de sandboxing
 
@@ -155,7 +155,7 @@ L'environnement d'exécution isolé peut être hébergé localement ou sur une i
 
 Le harness doit contrôler l'ensemble du cycle de vie de la sandbox, de sa création à sa destruction, afin de garantir un environnement d'exécution isolé, maîtrisé et éphémère.
 
-![](/DE/AG/SAI/images/cycle_vie_sandbox.png)
+![](/DE/AG/SAI/DE-AG-SAI-001/images/cycle_vie_sandbox.png)
 
 ## Les limites du sandboxing
 
@@ -185,13 +185,13 @@ Cette stratégie de **défense en profondeur** repose notamment sur :
 > [!IMPORTANT]
 > **Le *sandboxing* ne rend pas un agent IA fiable ou inoffensif**. Il permet principalement de contenir les conséquences de ses actions et doit être associé à d'autres mécanismes de sécurité.
 
-![](/DE/AG/SAI/images/defense_profondeur.png)
+![](/DE/AG/SAI/DE-AG-SAI-001/images/defense_profondeur.png)
 
 ## Bonnes pratiques du sandboxing
 
 La mise en place d'une *sandbox* doit s'accompagner de mesures concrètes visant à renforcer l'isolation, contrôler les accès et maîtriser les conditions d'exécution de l'agent.
 
-![](/DE/AG/SAI/images/bonne_pratiques.png)
+![](/DE/AG/SAI/DE-AG-SAI-001/images/bonne_pratiques.png)
 
 ## Mise en application
 
@@ -242,12 +242,12 @@ A travers ce scénario, nous illustrerons les bonnes pratiques qu'un *harness* d
 
 Après exécution de `agent_sandbox.py`, observons la trace d'exécution dans `langfuse`. Nous obtenons:
 
-![](/DE/AG/SAI/images/results.png)
-![](/DE/AG/SAI/images/results_2.png)
+![](/DE/AG/SAI/DE-AG-SAI-001/images/results.png)
+![](/DE/AG/SAI/DE-AG-SAI-001/images/results_2.png)
 
 Nous observons que le modèle a utilisé le tool `execute` pour exécuter une commande *bash* arbitraire (`python3 /tmp/workspace/python_test.py | tee /tmp/workspace/test.txt`). Mais les actions ont-elles été réalisées dans la *sandbox* ?
 
-![](/DE/AG/SAI/images/vm_content.png)
+![](/DE/AG/SAI/DE-AG-SAI-001/images/vm_content.png)
 
 En observant les fichiers présents dans la *sandbox*, nous observons notre script initial et le fichier `/tmp/workspace/test.txt` qui correspond à la réponse. L'exécution a donc bien été faite dans la *sandbox*.
 
